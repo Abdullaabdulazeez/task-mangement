@@ -18,7 +18,7 @@ Node.js, Express.js
 ### Installation
 
 1. Clone the repository:
-git clone https://github.com/yourusername/task-management-system.git
+git clone git@github.com:Abdullaabdulazeez/task-mangement.git
 cd task-management-system
 
 - Node.js installed on your machine
