@@ -32,15 +32,87 @@ cd task-management-system
 4.4. **Start the Server:**
    - npm start
 
-### API Endpoints
 
-#### User Routes
-POST /api/auth/register: Register a new user.
-POST /api/auth/login: Authenticate a user and retrieve a JWT.
-#### Task Routes
-POST /api/tasks: Create a new task (Admin, User).
-GET /api/tasks: Retrieve all tasks (Admin, User).
-PUT /api/tasks/:id: Update a task by ID (Admin).
-DELETE /api/tasks/:id: Delete a task by ID (Admin).
+### API Endpoints
+ #### Authentication
+ ####  Register User
+
+   - URL: /api/auth/register
+   - Method: POST
+   - Headers: Content-Type: application/json
+   - Body: json
+
+         {
+           "name": "abdulla",
+           "email": "abdulla@example.com",
+           "password": "abdulla123"
+         }
+   - Response: json
+
+         {
+           "token": "your_jwt_token_here"
+         }
+  - Login User
+
+  - URL: /api/auth/login
+  - Method: POST
+  - Headers: Content-Type: application/json
+  - Body: json
+
+      {
+        "email": "abdulla@example.com",
+        "password": "abdulla123"
+      }
+  - Response: json
+
+         {
+           "token": "your_jwt_token_here"
+         }
+  #### Tasks
+    - Get All Tasks
+
+    - URL: /api/tasks
+    - Method: GET
+    - Headers:
+    - Authorization: Bearer your_jwt_token_here
+    
+  #### Create a Task
+
+   - URL: /api/tasks
+   - Method: POST
+   - Headers:
+   - Content-Type: application/json
+   - Authorization: Bearer your_jwt_token_here
+   - Body: json
+
+         {
+           "title": "New Task",
+           "description": "Task description",
+           "priority": "High",
+           "status": "Pending",
+           "assignedTo": "userId"
+         }
+  #### Update a Task
+
+   - URL: /api/tasks/:taskId
+   - Method: PUT
+   - Headers:
+   - ontent-Type: application/json
+   - Authorization: Bearer your_jwt_token_here
+   - Body: json
+
+         {
+           "title": "Updated Task",
+           "description": "Updated task description",
+           "priority": "Low",
+           "status": "Completed",
+           "assignedTo": "userId"
+         }
+  #### Delete a Task
+
+   - URL: /api/tasks/:taskId
+   - Method: DELETE
+   - Headers:
+   - Authorization: Bearer your_jwt_token_here
 
 
