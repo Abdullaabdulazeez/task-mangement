@@ -106,7 +106,8 @@ cd task-management-system
            "description": "Updated task description",
            "priority": "Low",
            "status": "Completed",
-           "assignedTo": "userId"
+           "assignedTo": "userId",
+            "createdBy": "user name"
          }
   #### Delete a Task
 
